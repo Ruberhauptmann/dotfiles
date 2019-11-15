@@ -15,6 +15,9 @@ dotfiles:
   d_scripts:
     src: scripts
     dst: ~/.scripts
+  d_texmf:
+    src: texmf
+    dst: ~/texmf
 profiles:
   pratchett:
     dotfiles:
@@ -22,3 +25,4 @@ profiles:
     - f_zshrc
     - f_tmux.conf
     - d_scripts
+    - d_texmf
