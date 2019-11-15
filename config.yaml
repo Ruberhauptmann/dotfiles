@@ -24,6 +24,9 @@ dotfiles:
   d_ultisnips:
     src: vim/UltiSnips
     dst: ~/.vim/UltiSnips
+  d_systemd:
+    src: config/systemd
+    dst: ~/.config/systemd
 profiles:
   pratchett:
     dotfiles:
@@ -34,3 +37,4 @@ profiles:
     - d_texmf
     - d_autoload
     - d_ultisnips
+    - d_systemd

@@ -1,0 +1,8 @@
+[Unit]
+Description=Gitwatch
+
+[Service]
+ExecStart=/usr/bin/gitwatch -r git@gitlab.com:Ruberhauptmann/wiki.git /home/tjark/Nextcloud/Notizen/
+
+[Install]
+WantedBy=multi-user.target
