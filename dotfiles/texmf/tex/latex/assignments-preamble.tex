@@ -1,0 +1,41 @@
+\documentclass{tufte-handout}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[german]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage[parfill]{parskip}
+
+\usepackage[fixed]{fontawesome5}
+\usepackage{hyperref}
+\usepackage[hyperref,amsmath,thmmarks]{ntheorem}
+
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+	  \setlength{\RaggedRightParindent}{0pt}%
+	  \setlength{\JustifyingParindent}{1.0pc}%
+	  \setlength{\parindent}{0pt}%
+	  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+\makeatother
+
+
+\newcommand{\Beh}{\textbf{Beh}: }
+
+% assertion env
+\theorembodyfont{\normalfont}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremsymbol{}
+\newtheorem*{assertion}{\faPencil* Behauptung}
+
+% proof env
+\theorembodyfont{\normalfont}
+\theoremheaderfont{\normalfont\bfseries}
+\theoremsymbol{\ensuremath{_\square}}
+\newtheorem*{proof}{\faPencil* Beweis}
+%\theoremsymbol{}

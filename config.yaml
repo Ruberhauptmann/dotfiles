@@ -18,6 +18,12 @@ dotfiles:
   d_texmf:
     src: texmf
     dst: ~/texmf
+  d_autoload:
+    src: vim/autoload
+    dst: ~/.vim/autoload
+  d_ultisnips:
+    src: vim/UltiSnips
+    dst: ~/.vim/UltiSnips
 profiles:
   pratchett:
     dotfiles:
@@ -26,3 +32,5 @@ profiles:
     - f_tmux.conf
     - d_scripts
     - d_texmf
+    - d_autoload
+    - d_ultisnips
