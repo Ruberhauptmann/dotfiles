@@ -1,0 +1,32 @@
+set nocompatible
+filetype off
+
+call plug#begin('~/.vim/plugged')
+" General writing plugins
+Plug 'Raimondi/delimitMate'
+
+
+" Plugins for dealing with LaTex
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+Plug 'honza/vim-snippets'
+Plug 'lervag/vimtex'
+Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+set conceallevel=2
+let g:tex_conceal="abdgm"
+
+" Vimwiki for notes (+ dirsettings for automatic gitlab pushing)
+Plug 'vimwiki/vimwiki'
+let wiki_1 = {}
+let wiki_1.path = '~/Nextcloud/Notizen/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+
+let g:vimwiki_list = [wiki_1]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+call plug#end()
+
+let g:tex_flavor = "latex"
