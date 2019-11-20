@@ -27,6 +27,9 @@ dotfiles:
   d_systemd:
     src: config/systemd
     dst: ~/.config/systemd
+  d_dotpics:
+    src: dotpics
+    dst: ~/.dotpics
 profiles:
   pratchett:
     dotfiles:
@@ -38,3 +41,4 @@ profiles:
     - d_autoload
     - d_ultisnips
     - d_systemd
+    - d_dotpics
