@@ -3,34 +3,52 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
-  f_vimrc:
-    src: vimrc
-    dst: ~/.vimrc
-  f_zshrc:
-    src: zshrc
-    dst: ~/.zshrc
-  f_tmux.conf:
-    src: tmux.conf
-    dst: ~/.tmux.conf
-  d_scripts:
-    src: scripts
-    dst: ~/.scripts
-  d_texmf:
-    src: texmf
-    dst: ~/texmf
-  d_autoload:
-    src: vim/autoload
-    dst: ~/.vim/autoload
   d_ultisnips:
     src: vim/UltiSnips
     dst: ~/.vim/UltiSnips
+  d_autoload:
+    src: vim/autoload
+    dst: ~/.vim/autoload
+  d_scripts:
+    src: scripts
+    dst: ~/.scripts
+  f_vimrc:
+    src: vimrc
+    dst: ~/.vimrc
+  d_texmf:
+    src: texmf
+    dst: ~/texmf
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+  f_bash_aliases:
+    src: bash_aliases
+    dst: ~/.bash_aliases
   d_systemd:
     src: config/systemd
     dst: ~/.config/systemd
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
   d_dotpics:
     src: dotpics
     dst: ~/.dotpics
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
 profiles:
+  Studix21:
+    dotfiles:
+    - f_vimrc
+    - f_zshrc
+    - f_tmux.conf
+    - d_scripts
+    - d_texmf
+    - d_autoload
+    - d_ultisnips
+    - d_systemd
+    - f_bashrc
+    - f_bash_aliases
   pratchett:
     dotfiles:
     - f_vimrc
@@ -42,13 +60,5 @@ profiles:
     - d_ultisnips
     - d_systemd
     - d_dotpics
-  Studix21:
-    dotfiles:
-    - f_vimrc
-    - f_zshrc
-    - f_tmux.conf
-    - d_scripts
-    - d_texmf
-    - d_autoload
-    - d_ultisnips
-    - d_systemd
+    - f_bashrc
+    - f_bash_aliases
