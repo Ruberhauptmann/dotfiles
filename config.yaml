@@ -42,3 +42,13 @@ profiles:
     - d_ultisnips
     - d_systemd
     - d_dotpics
+  Studix21:
+    dotfiles:
+    - f_vimrc
+    - f_zshrc
+    - f_tmux.conf
+    - d_scripts
+    - d_texmf
+    - d_autoload
+    - d_ultisnips
+    - d_systemd
