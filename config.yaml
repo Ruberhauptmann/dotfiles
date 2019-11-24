@@ -36,6 +36,9 @@ dotfiles:
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
+  f_config:
+    src: config/termite/config
+    dst: ~/.config/termite/config
 profiles:
   Studix21:
     dotfiles:
@@ -49,6 +52,7 @@ profiles:
     - d_systemd
     - f_bashrc
     - f_bash_aliases
+    - f_config
   pratchett:
     dotfiles:
     - f_vimrc
@@ -62,3 +66,4 @@ profiles:
     - d_dotpics
     - f_bashrc
     - f_bash_aliases
+    - f_config
