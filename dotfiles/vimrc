@@ -38,6 +38,12 @@ let wiki_2.ext = '.md'
 let g:vimwiki_list = [wiki_1, wiki_2]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
+Plug 'mrk21/yaml-vim'
+
 call plug#end()
 
+" LaTex settings
 let g:tex_flavor = "latex"
+
+" Fortran settings
+let fortran_do_enddo=1
