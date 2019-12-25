@@ -67,3 +67,15 @@ profiles:
     - f_bashrc
     - f_bash_aliases
     - f_config
+  bilbo:
+    dotfiles:
+    - f_vimrc
+    - f_zshrc
+    - f_tmux.conf
+    - d_scripts
+    - d_texmf
+    - d_autoload
+    - d_systemd
+    - f_bashrc
+    - f_bash_aliases
+    - f_config
