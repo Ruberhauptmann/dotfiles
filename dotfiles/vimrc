@@ -1,9 +1,12 @@
 set nocompatible
 filetype off
 
+" Plugins and settings
 call plug#begin('~/.vim/plugged')
 " General writing plugins
 Plug 'Raimondi/delimitMate'
+
+Plug 'mrk21/yaml-vim'
 
 " Vim-airline
 Plug 'vim-airline/vim-airline'
@@ -19,26 +22,10 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
-Plug   'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 set conceallevel=2
 let g:tex_conceal="abdgm"
 
-" Vimwiki for notes (+ dirsettings for automatic gitlab pushing)
-Plug 'vimwiki/vimwiki'
-let wiki_1 = {}
-let wiki_1.path = '~/Nextcloud/Notizen/'
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
-
-let wiki_2 = {}
-let wiki_2.path = '~/Nextcloud/Dokumente/P&P/Cyberpunk RED'
-let wiki_2.syntax = 'markdown'
-let wiki_2.ext = '.md'
-
-let g:vimwiki_list = [wiki_1, wiki_2]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
-Plug 'mrk21/yaml-vim'
 
 call plug#end()
 
@@ -47,3 +34,41 @@ let g:tex_flavor = "latex"
 
 " Fortran settings
 let fortran_do_enddo=1
+
+" Add line numbers
+set number
+set ruler
+set cursorline
+
+" Disable Backup and Swap files
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Set encoding
+set encoding=utf-8
+
+" Whitespace stuff
+set nowrap
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Disable Mode Display because Status line is on
+set noshowmode
+
+" Show trailing spaces and highlight hard tabs
+set list listchars=tab:»·,trail:·
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Strip trailing whitespaces on each save
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
