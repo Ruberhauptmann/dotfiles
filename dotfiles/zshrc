@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias dotdrop='$HOME/dotfiles/dotdrop.sh --cfg=$HOME/dotfiles/config.yaml'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

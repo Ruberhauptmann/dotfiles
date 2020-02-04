@@ -5,6 +5,8 @@ filetype off
 call plug#begin('~/.vim/plugged')
 " General writing plugins
 Plug 'Raimondi/delimitMate'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'mrk21/yaml-vim'
 
@@ -72,3 +74,21 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" Keybindings
+" fuzzy find files in the working directory (where you launched Vim from)
+nmap <leader>f :Files<cr>
+" fuzzy find lines in the current file
+nmap <leader>/ :BLines<cr>
+" fuzzy find an open buffer
+nmap <leader>b :Buffers<cr>
+" fuzzy find text in the working directory
+nmap <leader>r :Rg
+" fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
+nmap <leader>c :Commands<cr>
+
+" Split Navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
