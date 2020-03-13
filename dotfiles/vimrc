@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+set encoding=utf-8
 
 " Plugins and settings
 call plug#begin('~/.vim/plugged')
@@ -28,6 +29,12 @@ Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 set conceallevel=2
 let g:tex_conceal="abdgm"
 
+Plug 'vimwiki/vimwiki'
+let g:vimwiki_list = [{'path': '~/Nextcloud/Notizen', 'syntax': 'markdown', 'ext': '.md'}, {'path': '$HOME/Nextcloud/Notizen/3S', 'syntax': 'markdown', 'ext': '.md'}]
+
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -86,6 +93,24 @@ nmap <leader>b :Buffers<cr>
 nmap <leader>r :Rg
 " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 nmap <leader>c :Commands<cr>
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" PEP 8 indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+
+" Indent for tex-files
+au BufNewFile,BufRead *.tex
+    \ set textwidth=79 fileformat=unix
+
+" Pretty Python Code
+let python_highlight_all=1
+syntax on
 
 " Split Navigation
 nnoremap <C-J> <C-W><C-J>

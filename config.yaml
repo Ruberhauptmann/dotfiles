@@ -39,6 +39,9 @@ dotfiles:
   f_config:
     src: config/termite/config
     dst: ~/.config/termite/config
+  d_oh-my-zsh:
+    src: oh-my-zsh
+    dst: ~/.oh-my-zsh
 profiles:
   Studix21:
     dotfiles:
@@ -67,6 +70,7 @@ profiles:
     - f_bashrc
     - f_bash_aliases
     - f_config
+    - d_oh-my-zsh
   bilbo:
     dotfiles:
     - f_vimrc

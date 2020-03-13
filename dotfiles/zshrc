@@ -8,7 +8,7 @@ export ZSH="/home/tjark/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="blinks"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,9 @@ ZSH_THEME="blinks"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(autoswitch_virtualenv git tmux)
+#plugins=(git)
+#plugins=(git virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,5 +102,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias dotdrop='$HOME/dotfiles/dotdrop.sh --cfg=$HOME/dotfiles/config.yaml'
+
+# Activate virtualenv prompt
+#export VIRTUAL_ENV_DISABLE_PROMPT=0
+#
+
+# Enviromnent
+TEXINPUTS=$TEXINPUTS:$HOME/texmf/tex/latex/tjarktex
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,0 +1,132 @@
+\usepackage{geometry}
+\geometry{
+  letterpaper,
+  left=0.7in,
+  right=3in,
+  bottom=1in
+}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+
+% Essential Packages
+\usepackage{makeidx}
+\makeindex
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[makeroom,thicklines]{cancel}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{marvosym}
+\usepackage[fixed]{fontawesome5}
+\usepackage{pgf,tikz}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{silence}
+  \WarningFilter*{latex}{Marginpar on page \thepage\space moved}
+\usepackage[hyperref]{ntheorem}
+\usepackage{hyperref}
+\usepackage[noabbrev,capitalize,nameinlink]{cleveref}
+\usepackage[most]{tcolorbox}
+\allowdisplaybreaks
+
+% hyperref Package Settings
+\usepackage{colorscheme-student}
+\hypersetup{
+	colorlinks,
+  breaklinks=true,
+	allcolors=magenta
+}
+\colorlet{red30}{red!30!background}
+\colorlet{green30}{green!30!background}
+\colorlet{yellow30}{yellow!30!background}
+\colorlet{blue30}{blue!30!background}
+\colorlet{magenta30}{magenta!30!background}
+\colorlet{cyan30}{cyan!30!background}
+\def\UrlBreaks{\do\/\do-}
+
+% fancyhdr
+\makeatletter
+\pagestyle{fancy}
+\rhead{\textsl{\@title} \enspace \thepage}
+\makeatother
+
+% tikz
+\usepgfplotslibrary{polar}
+\usepgflibrary{shapes.geometric}
+\usetikzlibrary{angles,patterns,calc,decorations.markings,arrows.meta,tikzmark,bending}
+\tikzset{midarrow/.style 2 args={
+        decoration={markings,
+            mark= at position #2 with {\arrow{#1}} ,
+        },
+        postaction={decorate}
+    },
+    midarrow/.default={latex}{0.5}
+}
+\def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+    { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+
+% enumitems
+\newlist{inlinelist}{enumerate*}{1}
+\setlist*[inlinelist,1]{%
+  label=(\roman*),
+}
+
+% Theorem Style Customization
+\setlength\theorempreskipamount{2ex}
+\setlength\theorempostskipamount{3ex}
+
+% ntheorem Declarations
+\theorembodyfont{\normalfont}
+\theoremstyle{break}
+\theoremprework{{\rule{\linewidth}{1pt}}}
+\theorempostwork{{\rule{\linewidth}{1pt}}}
+\newtheorem*{proof}{\faPencil* Proof}
+
+\theoremprework{\rule{\linewidth}{1pt}}
+\theorempostwork{\rule{\linewidth}{1pt}}
+\newtheorem*{solution}{\faPencil* Solution}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+% ntheorem listtheorem style
+\makeatother
+\newlength\widesttheorem
+\AtBeginDocument{
+  \settowidth{\widesttheorem}{Proposition A.1.1.1\quad}
+}
+
+% Custom table columning
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Graph styles
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{four quads/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+\pgfplotsset{four quad complex/.append style={axis x line=middle, axis y line=
+middle, xlabel={$\re$}, ylabel={$\im$}, axis equal }}
+
+% Shortcuts
+\input{notations.tex}
+
+\DeclareRobustCommand{\hlb}[2]{\sethlcolor{#1}\hl{#2}}
+\DeclareRobustCommand{\hlbnotea}[1]{\hlb{green30}{#1}}
+\DeclareRobustCommand{\hlbnoteb}[1]{\hlb{cyan30}{#1}}
+\DeclareRobustCommand{\hlbnotec}[1]{\hlb{yellow30}{#1}}
+\DeclareRobustCommand{\hlbnoted}[1]{\hlb{magenta30}{#1}}
+\DeclareRobustCommand{\hlbnotee}[1]{\hlb{red30}{#1}}
